@@ -1,17 +1,13 @@
 import numpy as np
 import math
 
-
-# device = torch.device("cuda:0") # Uncomment this to run on GPU
-
-# Create random input and output data
 day=365
 x = np.linspace(0, 10000, day)
 drandom=np.random.randint(0,day,1)
 y = x[drandom]
 print("Guadagno effettivo del giorno: ",drandom," ",y)
 
-# Randomly initialize weights
+# weights
 a = np.random.randn()
 b = np.random.randint(1)
 c = np.random.randn()
@@ -19,7 +15,6 @@ c = np.random.randn()
 
 learning_rate = 1e-6
 for t in range(200000):
-    # Forward pass: compute predicted y
     y_pred = a
     drandom_pred = b
     domani_pred = c
@@ -38,4 +33,4 @@ for t in range(200000):
     c -= learning_rate * grad_c
 
 
-print('Guadagno stimato del giorno: ',b," ",a, "Domani prendi forse: ", c/(b+1))
+print('Guadagno stimato: Giorno: ',b," ",a, )
