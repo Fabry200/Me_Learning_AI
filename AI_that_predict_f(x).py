@@ -5,7 +5,7 @@ from sympy.abc import x,y
 import time
 
 x0=np.random.randint(0,9999,(1))
-y0=np.random.randint(0,9999,(1)) #parameter x and y
+y0=np.random.randint(0,9999,(1)) 
 x1=np.random.randint(0,9999,(1))
 y1=np.random.randint(0,9999,(1))
 print("Points x:",x0,"y:",y0," ","x1:",x1," ","y1:",y1)
@@ -24,7 +24,7 @@ d=np.random.randn()
 
 learning_rate=1e-6
 
-### sempre dichiarare i gradienti prima
+# gradients
 grad_a=0
 grad_b=0
 grad_c=0
@@ -56,8 +56,7 @@ yp=int(round(yp,0))
 x1p=int(round(x1p,0))
 y1p=int(round(y1p, 0))
 fine=time.time()
-        #dfypred=dfypred-(learning_rate*grad_dx)
-
+      
 dxpred=Eq(((x-xp)/(x1p-xp))-((y-yp)/(y1p-yp)),0)
 fypred=solve(dxpred,y)
 print("Points calculated: x:",xp,"y:",yp," ","x1:",x1p," ","y1:",y1p)
